@@ -1,0 +1,13 @@
+ @import url('https://fonts.googleapis.com/css?family=Cabin:400,600,700|Krona+One');
+ .webvr-ui-button {
+     background: #f00;
+     width: 300px;
+     height: 5vh !important;
+     position: fixed !important;
+     top: 3vh;
+     cursor: pointer;
+     z-index: 10000;
+     left: 75vw;
+     opacity: 1;
+     margin-left: -150px;
+ }

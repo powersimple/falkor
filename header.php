@@ -10,13 +10,15 @@
 ?>
   <script>
       // Wordpress PHP variables to render into JS at outset.
-      var active_id = <?=$post->ID?>;
-      var active_object = "<?=$post->post_type?>";
-      var home_page = <?=get_option( 'page_on_front' )?>;
-      var site_title = "<?=get_bloginfo('name')?>";
-      var data_path = "<?=get_stylesheet_directory_uri()?>/data/";
-      var uploads_path =  "<?=$url['baseurl']?>/";
-      var xr_path = 'xr/'
+      var active_id = <?=$post->ID?>,
+      active_object = "<?=$post->post_type?>",
+      home_page = <?=get_option( 'page_on_front' )?>,
+      site_title = "<?=get_bloginfo('name')?>",
+      xr_path = "<?=get_stylesheet_directory_uri()?>/xr/",
+      data_path = "<?=get_stylesheet_directory_uri()?>/data/",
+      
+      uploads_path =  "<?=$url['baseurl']?>/"
+     
       
       <?php
           if(function_exists('icl_object_id')){

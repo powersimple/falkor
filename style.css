@@ -261,8 +261,7 @@ a:hover {
 #main {
   min-width: 320px;
   min-height: 320px;
-  position: absolute;
-  background-color: black; }
+  position: absolute; }
 
 footer {
   position: absolute;

@@ -256,7 +256,7 @@ function reposition_screen() {
 
     var width = '100vw'
     var height = '100vh'
-    var top = 0
+    var top = 20
     var bottom = 0;
     var left = 0;
     var margin_top = 0

@@ -36,6 +36,24 @@ function css() {
         .pipe(browserSync.stream())
 }
 
+function xr_css() {
+    return src(['xr/css/xr.scss'], {
+            sourcemaps: true
+        })
+        .pipe(sass())
+        .pipe(dest('./'))
+        .pipe(minifyCSS())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(cssnano())
+        .pipe(dest('./'))
+        .pipe(notify({
+            message: 'XR converted to SCSS '
+        }))
+        .pipe(browserSync.stream())
+}
+
 function js() {
     return src('app/js/custom/**/*.js', {
             sourcemaps: true
@@ -62,7 +80,9 @@ function xr_lib() {
         sourcemaps: true
     })
 
-
+    .pipe(babel({
+        presets: ['@babel/preset-env']
+    }))
 
     .pipe(concat('xr-lib.js'))
         .pipe(dest('./'))
@@ -75,6 +95,7 @@ function xr_lib() {
             message: 'XR LIB compiled'
         }))
 }
+
 
 function xr_app() {
 
@@ -101,6 +122,11 @@ function clean() {
 
 }
 
+function xr_clean() {
+    return del(['./xr.css', './xr.min.css'])
+
+}
+
 function browser() {
     browserSync.init({
         proxy: localhost,
@@ -112,11 +138,14 @@ function browser() {
         ]
     });
     watch('./app/sass/**/*.scss', clean);
-    watch('./app/sass/**/*.scss', css);
+    watch('./app/sass/**/*.scss', css).on('change', browserSync.reload);
     watch('./app/js/custom/**/*.js', js).on('change', browserSync.reload);
 
-    watch('./xr/js/lib/**/*.js', xr_lib).on('change', browserSync.reload);
-    watch('./xr/js/app/**/*.js', xr_app).on('change', browserSync.reload);
+    //until I put this in webpack.
+    watch('./xr/css/**/*.scss', xr_clean);
+    watch('./xr/css/**/*.scss', xr_css).on('change', browserSync.reload);
+    //watch('./xr/js/lib/**/*.js', xr_lib).on('change', browserSync.reload);
+    //watch('./xr/js/app/**/*.js', xr_app).on('change', browserSync.reload);
 
 }
 
