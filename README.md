@@ -14,4 +14,6 @@ These are all quaint and useful in a 2D content World
 But now we're in the webXR world. and it's time to build for it.
 So this repo will be integrating the best of WebXR into it for immersive experiences on supporting browsers.
 
-If you have Oculus Quest or a device with the Mozilla Reality Browser. 
+If you have Oculus Quest or a device with the Mozilla Reality Browser, you'll need that to full take advantage of immersive WebXR. 
+
+A work in progress.
