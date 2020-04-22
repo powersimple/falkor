@@ -1,7 +1,8 @@
-#FALKOR
+**FALKOR**
 
 Yes, this is named after the Luck Dragon from The Never Ending Story, because this repo needed not just a name, but a mascot.
 And a kindly flying dog seemed appropriate. Soon after this repo was created, by kismet, I ran into Falkor in AltSpaceVR.
+
 ![Image of Falkor](https://github.com/powersimple/falkor/blob/master/images/logo/falkor.jpg)
 
 ##Falkor is many things. 
