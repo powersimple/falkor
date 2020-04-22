@@ -8,8 +8,8 @@
 
 require_once "profiler.admin.php";//WP ADMIN functions including metabox declarations
 require_once "profiler.model.php";//Gets the data
-require_once "profiler.controller.php";//funciton that transforms the data
-require_once "profiler.view.php";//fuctions that 
+require_once "profiler.controller.php";//function that transforms the data
+require_once "profiler.view.php";//functions that 
 
 
 

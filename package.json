@@ -4,6 +4,7 @@
     "description": "SpatialComputing World",
     "main": "index.js",
     "license": "MIT",
+    "author": "Integrated upon the shoulders of giants by Ben Erwin",
     "scripts": {
         "start": "cd packages/react-scripts && node bin/react-scripts.js start",
         "dev": "gulp dev",
@@ -111,6 +112,7 @@
         "ecsy": "^0.2.3",
         "node-gyp": "^6.1.0",
         "rebuild": "^0.1.2",
+        "scrapedin": "^1.0.12",
         "three": "^0.114.0",
         "three-obj-loader": "^1.1.3",
         "three-pointerlock": "0.0.2",

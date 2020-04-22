@@ -79,6 +79,8 @@ require_once("functions-wpml-languages.php");
             print $content;
             die();//kills the page load so you can see the endpoint urls
         }
+
+      
       //writeJSON($posts_path,$file_path);
 
         
@@ -106,5 +108,21 @@ require_once("functions-wpml-languages.php");
        
     }
 } 
+function slugify_tax($start,$end){
+    global $wpdb;
+    $sql = "select term_id, name from wp_terms where (term_id >= $start) and (term_id<=$end)";
+    $q = $wpdb->get_results($sql);
+    foreach($q as $key=>$value){
+        print $value->name ."|".sanitize_title($value->name)."<BR>";
+
+    }
+    die();
+}
+  if(@$_GET['slugify_tax']){
+      slugify_tax($_GET['slugify_tax'],$_GET['end']);
+}
+
+
+
     //add_action( 'save_post', 'refreshJSON');// this will run if you save a post. Too much overhead for every save so better to trigger manually
 ?>

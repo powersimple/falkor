@@ -49,7 +49,7 @@
               onRequestSession: onRequestSession,
               onEndSession: onEndSession
           });
-          document.querySelector('header').appendChild(xrButton.domElement);
+          document.querySelector('footer').appendChild(xrButton.domElement);
 
           // Is WebXR available on this UA?
           if (navigator.xr) {

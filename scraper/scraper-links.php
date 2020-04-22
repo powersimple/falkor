@@ -5,7 +5,7 @@
 if(@$_GET['skip']){
     global $wpdb;
   
-    $set = 'UPDATE civictech_data set skipped = 1  where id = '.$_GET['skip'];
+    $set = 'UPDATE omni_data set skipped = 1  where id = '.$_GET['skip'];
     
     $q = $wpdb->query($set);
     

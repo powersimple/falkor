@@ -142,7 +142,7 @@ function parseLinks($data){
             if (strpos($value['url'], 'twitter.com') !== false && strpos($value['url'], 'share?')  != true) {
 
 //Twitter
-                $links['twitter'] = basename($value['url']);
+                $links['twitter'] = $value['url'];//basename($value['url']);
 			} else if(strpos($value['url'], 'facebook.com') !== false //facebook good
 			 && strpos($value['url'], 'sharer') != true){ // share url bad
 //Facebook
@@ -192,7 +192,10 @@ function parseLinks($data){
                 $links['slack'] = $value['url'];
             } else if(strpos($value['url'], 'skype.com') !== false){
 //Skype
-                $links['skype'] = $value['url'];
+				$links['skype'] = $value['url'];
+				} else if(strpos($value['url'], 'dribbble.com') !== false){
+//Skype
+                $links['dribbble'] = $value['url'];
             } else if(strpos($value['url'], 'behance.net') !== false){
 //Behance
                 $links['behance'] = $value['url'];
@@ -232,7 +235,7 @@ function clean($string) {
 }
 function getLinkArray($sql){
 	global $wpdb;
-	$sql = "select * from civictech_data where $sql";
+	 $sql = "select * from omni_data where $sql";
 	$q = $wpdb->get_results($sql);
 	$links = array();	
 	foreach($q as $key => $value){

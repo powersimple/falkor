@@ -28,7 +28,7 @@ function metaHandler($key,$value){
 
 		if ($key == 'link_array'){
 			print "<hr><strong>LINKS</strong><br>";
-			$links = parseLinks($value);
+			$links = parseSocialLinks($value);
 			foreach($links as $key => $link){
 				if(is_array($link)){ // more than one,
 					print "<br>$key: $link_value<br>";

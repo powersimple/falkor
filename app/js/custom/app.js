@@ -51,7 +51,14 @@ jQuery(document).ready(function() {
     jQuery(".wheelnav-outer-nav-title").css("display:none;");
     console.log("ready")
     reposition_screen()
+    tagCloud()
+        //setGlobe("#globe", _w * .1, _h * .1);
+    setWorld("#globe", "#world");
+    if (oriented == "horizontal") {
 
+    } else {
+
+    }
 
 })
 jQuery(window).resize(function() {
@@ -68,6 +75,9 @@ jQuery(window).resize(function() {
             //orientation_last = 'vertical'
     }
     aspect = _w / _h
+        //   setGlobe("#globe", Math.round(_w * .1), Math.round(_h * .1));
+
+
     reposition_screen()
 
 })
@@ -98,20 +108,21 @@ function initSite() { // called from the menus callback
     }
     // console.log("slug=" + default_slug, menus['wheel-menu'].slug_nav)
     setSocial()
+    if (useWheelNav === true) {
+        var notch = menus['wheel-menu'].slug_nav[default_slug]
+        setSlider()
 
-    var notch = menus['wheel-menu'].slug_nav[default_slug]
-    setSlider()
+        setSlides('wheel-menu')
+        setSlides('projects')
 
-    setSlides('wheel-menu')
-    setSlides('projects')
+        // console.log("menu","notch="+notch)
+        //  jQuery(menu_config[m].location).html(items)
 
-    // console.log("menu","notch="+notch)
-    //  jQuery(menu_config[m].location).html(items)
-    setSlideShow('wheel-menu'); // creates slides for the slick carousel
-    makeWheelNav("outer-nav", menus['wheel-menu'].menu_levels)
-    setSliderNotch(notch)
-
-    initWebGLProgram()
+        setSlideShow('wheel-menu'); // creates slides for the slick carousel
+        makeWheelNav("outer-nav", menus['wheel-menu'].menu_levels)
+        setSliderNotch(notch)
+    }
+    //initWebGLProgram()
 
     //  initMatrix();
     //console.log(menus)
@@ -254,13 +265,13 @@ function reposition_screen() {
 
 
 
-    var width = '100vw'
-    var height = '100vh'
-    var top = 20
+    var width = '90vw'
+    var height = '90vh'
+    var top = 0
     var bottom = 0;
     var left = 0;
-    var margin_top = 0
-    var margin_left = 0;
+    var margin_top = '-5vh'
+    var margin_left = '5vw';
     var inc = 'vh'
 
     if (aspect <= 0.5) {

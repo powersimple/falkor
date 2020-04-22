@@ -10,9 +10,8 @@
 require_once get_template_directory() . '/scraper/scraper-functions.php';
 $links = getLinkArray(1);
 if(@$_POST['id']){
-	/*
-    global $wpdb;
-    $set = 'UPDATE civictech_data set ';
+	 global $wpdb;
+    $set = 'UPDATE omni_data set ';
     $sets = array();
      foreach($_POST as $k => $value){
         if($k == 'id'){
@@ -27,7 +26,7 @@ if(@$_POST['id']){
 	$q = $wpdb->query($set);
 	if($q == false){
 		print $set;
-	}*/
+	}
    //var_dump($q);
 }
 

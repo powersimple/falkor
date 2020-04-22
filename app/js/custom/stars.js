@@ -71,10 +71,10 @@ function render() {
     animateStars()
 }
 
-/*initStars()
+/**/initStars()
 addSphere()
 render()
-*/
+
 jQuery(window).on('resize', function() {
         //BRING THIS BACK  
         //  renderer.setSize(window.innerWidth, window.innerHeight)

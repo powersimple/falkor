@@ -16,7 +16,11 @@ DO NOT EDIT IN STYLE.CSS
 
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,600,700|Krona+One');
 @import "partials/reset";
+@import "partials/colors";
+@import "partials/loader";
 @import "partials/header";
+@import "partials/nav";
+@import "partials/footer";
 @import "partials/admin";
 @import "partials/main";
 @import "partials/images";
@@ -32,7 +36,9 @@ DO NOT EDIT IN STYLE.CSS
 @import "partials/slider";
 @import "partials/slick";
 @import "partials/laser";
+@import "partials/tag-cloud";
 @import "partials/webgl";
+@import "partials/scraper";
 //languages
 @import "partials/wpml-languages";
 #matrix {

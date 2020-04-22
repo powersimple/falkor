@@ -88,7 +88,7 @@ function detectMedia($pagemap){
 }
 
 
-function parseLinks($data){
+function parseSocialLinks($data){
 	$links = array();
 	foreach($data as $key =>$value){
 

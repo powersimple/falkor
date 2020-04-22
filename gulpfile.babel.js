@@ -1,4 +1,4 @@
-var localhost = 'http://spatialcomputing.192.168.1.20.xip.io' // SET local dev url here
+var localhost = 'http://spatialcomputing.192.168.1.16.xip.io' // SET local dev url here
 const { gulp, src, dest, watch } = require('gulp'),
     sass = require('gulp-sass'),
     minifyCSS = require('gulp-csso'),
@@ -75,6 +75,26 @@ function js() {
         }))
 }
 
+function vendor() {
+    return src('app/js/vendor/**/*.js', {
+            sourcemaps: true
+        })
+        /*
+        .pipe(babel({
+                presets: ['@babel/preset-env']
+            }))*/
+        .pipe(concat('vendor.js'))
+        .pipe(dest('./'))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(uglify())
+        .pipe(dest('./'))
+        .pipe(notify({
+            message: 'JS compiled'
+        }))
+}
+
 function xr_lib() {
     return src('xr/js/lib/**/*.js', {
         sourcemaps: true
@@ -140,6 +160,7 @@ function browser() {
     watch('./app/sass/**/*.scss', clean);
     watch('./app/sass/**/*.scss', css).on('change', browserSync.reload);
     watch('./app/js/custom/**/*.js', js).on('change', browserSync.reload);
+    watch('./app/js/vendor/**/*.js', vendor).on('change', browserSync.reload);
 
     //until I put this in webpack.
     watch('./xr/css/**/*.scss', xr_clean);

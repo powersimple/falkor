@@ -10,7 +10,7 @@ if ($_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR']){
     if(@$_POST['id']){
         global $wpdb;
       
-        $set = 'UPDATE civictech_data set ';
+        $set = 'UPDATE omni_data set ';
         $sets = array();
         foreach($_POST as $k => $value){
           //  $value = str_replace("'","\'",$value);

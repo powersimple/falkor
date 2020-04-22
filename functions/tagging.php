@@ -57,7 +57,7 @@
     function getTags($taxonomies,$resource_id){
         $taxonomies = explode(",",$taxonomies);
          global $wpdb;
-         $record = $wpdb->get_row("SELECT `wp_post_id`, url_content FROM `civictech_data` WHERE id = $resource_id");
+         $record = $wpdb->get_row("SELECT `wp_post_id`, url_content FROM `omni_data` WHERE id = $resource_id");
             
             $post_id = $record->wp_post_id;
             $url_content = $record->url_content;

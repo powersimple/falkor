@@ -1,13 +1,4 @@
 <?php
-add_action( 'init', 'socials_to_cpt' );
-function socials_to_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'social'
-    );
-    register_post_type( 'social', $args );
-}
 
 
 /*WP REST API CUSTOM ENDPOINTS. RETURNS SPECIFIC THUMBNAIL URL*/ 

@@ -31,10 +31,12 @@
         wp_register_script('three', '//cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'); 
         wp_enqueue_script('three');
 
-         wp_register_script('d3', '//d3js.org/d3.v3.min.js'); 
+    wp_register_script('d3', '//cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js'); 
         wp_enqueue_script('d3');
+        wp_register_script('d3-geo', '//d3js.org/d3-geo.v1.min.js'); 
+        wp_enqueue_script('d3-geo');
         
-        wp_register_script('topojson', '//d3js.org/topojson.v1.min.js'); 
+        wp_register_script('topojson', '//d3js.org/topojson.v2.min.js'); 
         wp_enqueue_script('topojson');
 
         wp_register_script('tweenmax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js'); 

@@ -9,15 +9,21 @@ require_once("functions/functions-metabox.php");
 require_once("functions/functions-rest-endpoints.php");
 // special class to register the restapi
 
+//enqueues scripts and styles
+//require_once("functions/functions-post-types.php");
+
+
 require_once("functions/functions-rest-menus.php");
 // custom functions to register fields into the restapi
 require_once("functions/functions-rest-register.php");
 require_once("functions/parsers.php");
-
+require_once("profiler/profiler.php");
 add_theme_support('post-thumbnails', array(
 'post',
 'page',
-'project',
+'social',
+'profiles',
+'resources'
 ));
 
 
@@ -106,17 +112,6 @@ function buttonLink($id){
 	<?php
 	return ob_get_clean();	
 
-}
-
-
-add_action( 'init', 'projects_to_cpt' );
-function projects_to_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'project'
-    );
-    register_post_type( 'project', $args );
 }
 
 

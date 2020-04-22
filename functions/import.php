@@ -2,7 +2,7 @@
 
     function listProjects($var_name,$where){
          global $wpdb;
-        $sql="select * from civictech_data where $where";
+        $sql="select * from omni_data where $where";
         $q = $wpdb->get_results($sql);
         $counter = 1;
         print "<table>";
@@ -21,7 +21,7 @@
     }
     function listResource($resource){
          global $wpdb;
-        $sql="select * from civictech_data where id = $resource";
+        $sql="select * from omni_data where id = $resource";
         $q = $wpdb->get_results($sql);
         $counter = 1;
 
@@ -58,7 +58,7 @@
         );
         $new_post = wp_insert_post( $new_post,$wp_error = false );
         global $wpdb;
-        $sql = "UPDATE `civictech_data` SET `wp_post_id` = '$new_post' WHERE `civictech_data`.`id` = $id;";
+        $sql = "UPDATE `omni_data` SET `wp_post_id` = '$new_post' WHERE `omni_data`.`id` = $id;";
         $wpdb->query($sql);
 
         return $new_post;

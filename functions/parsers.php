@@ -218,28 +218,8 @@ function insertTaxTerm($term){
 
 
 
-function getBlurbs(){
-    $start=0;
-    $end=10000;
-    global $wpdb;
-    $limit="";
-    if(@$_GET['start']){
-        $start = $_GET['start'];
-    }
-    if(@$_GET['end']){
-        $end = $_GET['end'];
-    }
-    $limit = "$start, $end";
-    global $wpdb;
 
-    $sql = "select * from omni_linkedin limit $limit";
-    $q = $wpdb->get_results($sql);
-    $blurbs = array();
-    foreach ($q as $key => $value) {
-        array_push($blurbs, (array) $value);
-    }
-    return $blurbs;
-    
 
-}
+
+
 ?>
