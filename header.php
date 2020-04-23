@@ -30,10 +30,11 @@
       ?>
 
   </script>
+  <link rel="stylesheet" type="text/css" media="print" href="<?=get_stylesheet_directory_uri()?>/print.css">
 </head>
 
 
-  <body>
+  <body id="<?=$post->post_name?>">
   <header>
 
   <div id="laurel">

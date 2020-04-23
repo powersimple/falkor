@@ -16,10 +16,15 @@ $GLOBALS['REST_CONFIG'] =array(//An array of url arguments
             "posts"=>"fields=id,type,title,content,slug,excerpt,languages,featured_media,screen_images,video,type,cats,tags&".$GLOBALS['REST_post_filter'],
             "pages"=>"fields=id,type,title,content,slug,excerpt,languages,featured_media,screen_images,featured_video,cats,tags,type&".$GLOBALS['REST_post_filter'],
             "profile"=>"fields=id,type,title,content,slug,excerpt,languages,project_info,featured_media,screen_images,featured_video,type,cats,tags&".$GLOBALS['REST_post_filter'],
-  
-            
+            "resource"=>"fields=id,type,title,content,slug,excerpt,languages,project_info,featured_media,screen_images,featured_video,type,cats,tags&".$GLOBALS['REST_post_filter'],
+            "event"=>"fields=id,type,title,content,slug,excerpt,languages,project_info,featured_media,screen_images,featured_video,type,cats,tags&".$GLOBALS['REST_post_filter'],
+            "product"=>"fields=id,type,title,content,slug,excerpt,languages,project_info,featured_media,screen_images,featured_video,type,cats,tags&".$GLOBALS['REST_post_filter'],
+            "person"=>"fields=id,type,title,content,slug,excerpt,languages,project_info,featured_media,screen_images,featured_video,type,cats,tags&".$GLOBALS['REST_post_filter'],
+            "sponsor"=>"fields=id,type,title,content,slug,excerpt,languages,project_info,featured_media,screen_images,featured_video,type,cats,tags&".$GLOBALS['REST_post_filter'],
             "social"=>"fields=id,type,title,content,slug,excerpt,featured_media,social_url&".$GLOBALS['REST_post_filter'],
             "categories"=>"fields=id,name,count,slug,description,posts,children",
+            "industry"=>"fields=id,name,count,slug,description,posts,children",
+            
             "tags"=>"fields=id,name,slug,posts&".$GLOBALS['REST_post_filter'],
             "menus"=>"menus",
             "media"=>"fields=id,data&".$GLOBALS['REST_post_filter']
@@ -110,22 +115,27 @@ require_once("functions-wpml-languages.php");
        
     }
 } 
-/*
+
 function slugify_tax($start,$end){
     global $wpdb;
     $sql = "select term_id, name from wp_terms where (term_id >= $start) and (term_id<=$end)";
     $q = $wpdb->get_results($sql);
+  
+    $terms_sql = "select * from wp_terms";
+    $terms = $wpdb->get_results($terms_sql);
+  
+  
     foreach($q as $key=>$value){
-     string $slug, object $term );
+//     string $slug, object $term ;
 
-        print $value->name ."|".wp_unique_term_slug(sanitize_title($value->name)."<BR>";
+        print $value->name ."|".wp_unique_term_slug(sanitize_title($value->name),$terms)."<BR>";
 
     }
     die();
 }
   if(@$_GET['slugify_tax']){
       slugify_tax($_GET['slugify_tax'],$_GET['end']);
-}*/
+}
 
 
 

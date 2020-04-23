@@ -137,6 +137,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body#guide {
+  background: #fff !important; }
+
+header,
+footer,
+#laurel {
+  display: none !important; }
+
 /*--------------------------------------------------------------
       Preloader
   --------------------------------------------------------------*/
