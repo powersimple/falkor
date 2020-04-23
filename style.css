@@ -139,11 +139,10 @@ table {
 
 body#guide {
   background: #fff !important; }
-
-header,
-footer,
-#laurel {
-  display: none !important; }
+  body#guide header,
+  body#guide footer,
+  body#guide #laurel {
+    display: none !important; }
 
 /*--------------------------------------------------------------
       Preloader
@@ -186,11 +185,11 @@ header {
   header #laurel {
     color: #fff;
     position: relative;
-    text-align: left;
+    text-align: center;
     width: 96%;
     padding: 2%;
     display: inline-block;
-    font-size: 150%; }
+    font-size: 70%; }
 
 header.horizontal {
   transform: rotate(0deg);

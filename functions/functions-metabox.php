@@ -139,6 +139,68 @@ function selectScreenImage( $meta_boxes ) {
 }
 add_filter( 'rwmb_meta_boxes', 'selectScreenImage' );
 
+function profile_info( $meta_boxes ) {
+	$prefix = '';
 
+	$meta_boxes[] = array(
+		'id' => 'profile_info',
+		'title' => esc_html__( 'Profile Info', 'metabox-online-generator' ),
+		'post_types' => array('profile' ),
+		'context' => 'side',
+		'priority' => 'default',
+		'autosave' => 'false',
+		'fields' => array(
+			array(
+				'id' => 'profile_title',
+				'type' => 'text',
+				'name' => esc_html__( 'Title', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_company',
+				'type' => 'text',
+				'name' => esc_html__( 'Organization', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_website',
+				'type' => 'url',
+				'name' => esc_html__( 'Website', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_wikipedia',
+				'type' => 'url',
+				'name' => esc_html__( 'Wikipedia URL', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_linkedin',
+				'type' => 'url',
+				'name' => esc_html__( 'LinkedIn URL', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_twitter',
+				'type' => 'url',
+				'name' => esc_html__( 'Twitter URL', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_facebook',
+				'type' => 'url',
+				'name' => esc_html__( 'Facebook URL', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_flickr',
+				'type' => 'url',
+				'name' => esc_html__( 'Flickr URL', 'metabox-online-generator' ),
+			),
+			array(
+				'id' => 'profile_instagram',
+				'type' => 'url',
+				'name' => esc_html__( 'Instagram URL', 'metabox-online-generator' ),
+			),
+			
+		),
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'profile_info' );
     
 ?>
